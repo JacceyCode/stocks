@@ -17,10 +17,10 @@ import { signOut } from "@/lib/actions/auth.actions";
 
 const UserDropdown = ({
   user,
-}: // initialStocks,
-{
+  initialStocks,
+}: {
   user: User;
-  // initialStocks: StockWithWatchlistStatus[];
+  initialStocks: StockWithWatchlistStatus[];
 }) => {
   const router = useRouter();
 
@@ -68,12 +68,11 @@ const UserDropdown = ({
             </div>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="hidden sm:block bg-gray-600" />
-        <nav className="sm:hidden">
-          {/* <NavItems initialStocks={initialStocks} /> */}
-          <NavItems />
-        </nav>
         <DropdownMenuSeparator className="bg-gray-600" />
+        <nav className="sm:hidden">
+          <NavItems initialStocks={initialStocks} />
+        </nav>
+        <DropdownMenuSeparator className="hidden sm:block bg-gray-600" />
         <DropdownMenuItem
           onClick={handleSignOut}
           className="text-gray-100 text-md font-medium focus:bg-transparent focus:text-yellow-500 transition-colors cursor-pointer"
